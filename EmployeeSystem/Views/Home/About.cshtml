@@ -1,0 +1,33 @@
+﻿@model IEnumerable<EmployeeSystem.ViewModels.HireDateGroup>
+
+@{
+    ViewBag.Title = "Employee Statistics";
+}
+
+<h2>Employee Statistics</h2>
+
+<table>
+    <tr>
+        <th>
+            Hire Date
+        </th>
+        <th>
+            Employees
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HireDate)
+            </td>
+            <td>
+                @item.EmployeeCount
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
